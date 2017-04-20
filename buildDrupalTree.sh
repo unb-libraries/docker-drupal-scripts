@@ -3,6 +3,7 @@
 # Copy build files into a temporary build location.
 mkdir ${DRUPAL_BUILD_TMPROOT}
 cp ${TMP_DRUPAL_BUILD_DIR}/composer.json ${DRUPAL_BUILD_TMPROOT}
+cp -r ${TMP_DRUPAL_BUILD_DIR}/scripts ${DRUPAL_BUILD_TMPROOT}
 cd ${DRUPAL_BUILD_TMPROOT}
 
 # Get latest composer/ScriptHandler.php.
