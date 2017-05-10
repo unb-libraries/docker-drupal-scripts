@@ -3,8 +3,8 @@
 docker exec ${DOCKER_DRUPAL_CONTAINER_NAME} drush --root=${APP_WEBROOT} --uri=default en --yes simpletest
 
 TESTS[0]='\Drupal\user\Tests\UserLoginTest'
-TESTS[1]='\Drupal\node\Tests\PageViewTest'
-TESTS[2]='\Drupal\system\Tests\File\UrlRewritingTest'
+TESTS[1]='\Drupal\Tests\node\Functional\PageViewTest'
+TESTS[2]='\Drupal\KernelTests\Core\File\UrlRewritingTest'
 TESTS[3]='\Drupal\file\Tests\FilePrivateTest'
 
 for TEST_CLASS in "${TESTS[@]}"; do
