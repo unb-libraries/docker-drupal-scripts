@@ -13,7 +13,7 @@ curl -O https://raw.githubusercontent.com/drupal-composer/drupal-project/8.x/scr
 mv ScriptHandler.php scripts/composer/
 
 # Build instance.
-composer install --prefer-dist --${COMPOSER_DEPLOY_DEV}
+composer install --prefer-dist --${DRUPAL_COMPOSER_DEV}
 
 # Configure scaffolding files.
 ln -s ${DRUPAL_BUILD_TMPROOT}/vendor/bin/drush /usr/bin/drush
