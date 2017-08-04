@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # Get latest download URI.
-NEWRELIC_DOWNLOAD_FILE=$(curl -s https://download.newrelic.com/php_agent/release/| egrep -o -m1 '>(newrelic-php5-.*-linux-musl.tar.gz)' | sed -e 's|>||g')
+NEWRELIC_DOWNLOAD_FILE=$(curl -s https://download.newrelic.com/php_agent/release/| egrep -o -m1 '>newrelic-php5-.*-linux-musl.tar.gz' | sed -e 's|>||g')
 NEWRELIC_DOWNLOAD_URI="https://download.newrelic.com/php_agent/release/$NEWRELIC_DOWNLOAD_FILE"
 NR_INSTALL_SILENT="true"
 
