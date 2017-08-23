@@ -18,6 +18,7 @@ mv ScriptHandler.php scripts/composer/
 # Build instance.
 echo "Building - 'composer install --prefer-dist --${DRUPAL_COMPOSER_DEV}'"
 composer install --no-ansi --prefer-dist --${DRUPAL_COMPOSER_DEV}
+rm -rf /root/.composer/cache
 
 # Configure scaffolding files.
 ln -s ${DRUPAL_BUILD_TMPROOT}/vendor/bin/drush /usr/bin/drush
