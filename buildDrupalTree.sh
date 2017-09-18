@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 
 # Dev/NoDev
 DRUPAL_COMPOSER_DEV="${1:-no-dev}"

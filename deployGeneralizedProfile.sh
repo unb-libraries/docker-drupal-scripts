@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+set -e
+
 # Deploy profile to drupal tree.
 mv ${TMP_DRUPAL_BUILD_DIR}/profile/profile.info.yml ${TMP_DRUPAL_BUILD_DIR}/profile/${DRUPAL_SITE_ID}.info.yml
 mv ${TMP_DRUPAL_BUILD_DIR}/profile/profile.install ${TMP_DRUPAL_BUILD_DIR}/profile/${DRUPAL_SITE_ID}.install
