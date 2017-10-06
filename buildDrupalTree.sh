@@ -19,14 +19,17 @@ mv ScriptHandler.php scripts/composer/
 # Build instance.
 echo "Building - 'composer install --prefer-dist --${DRUPAL_COMPOSER_DEV}'"
 composer install --no-ansi --prefer-dist --${DRUPAL_COMPOSER_DEV}
-rm -rf /root/.composer/cache
 
 # Install Drush globally.
+COMPOSER_DRUSH_INSTALL_VERSION='8'
+echo "Installing drush $COMPOSER_DRUSH_INSTALL_VERSION"
 cd /app
-COMPOSER_INSTALL_VERSION='8'
-COMPOSER_HOME=/opt/drush COMPOSER_BIN_DIR=/usr/bin COMPOSER_VENDOR_DIR=/opt/drush/$COMPOSER_INSTALL_VERSION composer require drush/drush:$COMPOSER_INSTALL_VERSION
-cd /opt/drush/$COMPOSER_INSTALL_VERSION/drush/drush
+COMPOSER_HOME=/opt/drush COMPOSER_BIN_DIR=/usr/bin COMPOSER_VENDOR_DIR=/opt/drush/$COMPOSER_DRUSH_INSTALL_VERSION composer require drush/drush:$COMPOSER_DRUSH_INSTALL_VERSION--no-ansi --prefer-dist
+cd /opt/drush/$COMPOSER_DRUSH_INSTALL_VERSION/drush/drush
 composer update
+
+# Remove composer cache
+rm -rf /root/.composer/cache
 
 # Move profile from repo to build root.
 cd ${DRUPAL_BUILD_TMPROOT}
