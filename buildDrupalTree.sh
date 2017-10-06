@@ -22,9 +22,11 @@ composer install --no-ansi --prefer-dist --${DRUPAL_COMPOSER_DEV}
 rm -rf /root/.composer/cache
 
 # Configure scaffolding files.
+cd /app
 COMPOSER_HOME=/opt/drush COMPOSER_BIN_DIR=/usr/bin COMPOSER_VENDOR_DIR=/opt/drush/8 composer require drush/drush:8
 
 # Move profile from repo to build root.
+cd ${DRUPAL_BUILD_TMPROOT}
 mv ${TMP_DRUPAL_BUILD_DIR}/${DRUPAL_SITE_ID} ${DRUPAL_BUILD_TMPROOT}/profiles/
 
 # Copy config from standard install profile for current version of Drupal.
