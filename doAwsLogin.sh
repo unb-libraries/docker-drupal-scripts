@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-pip install --user awscli
-export PATH=$PATH:$HOME/.local/bin
-$(aws ecr get-login --region $AWS_REGION)
+
+# Pull the latest version of the upstream image.
+docker pull ${DOCKER_UPSTREAM_IMAGE}
