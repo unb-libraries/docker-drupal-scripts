@@ -22,9 +22,7 @@ composer install --no-ansi --prefer-dist --${DRUPAL_COMPOSER_DEV}
 rm -rf /root/.composer/cache
 
 # Configure scaffolding files.
-curl -OL https://github.com/drush-ops/drush-launcher/releases/download/0.4.2/drush.phar
-chmod +x drush.phar
-mv drush.phar /usr/bin/drush
+COMPOSER_HOME=/opt/drush COMPOSER_BIN_DIR=/usr/bin COMPOSER_VENDOR_DIR=/opt/drush/8 composer require drush/drush:8
 
 # Move profile from repo to build root.
 mv ${TMP_DRUPAL_BUILD_DIR}/${DRUPAL_SITE_ID} ${DRUPAL_BUILD_TMPROOT}/profiles/
