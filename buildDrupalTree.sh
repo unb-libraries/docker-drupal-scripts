@@ -22,7 +22,7 @@ composer install --no-ansi --prefer-dist --${DRUPAL_COMPOSER_DEV}
 rm -rf /root/.composer/cache
 
 # Configure scaffolding files.
-wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/download/0.4.2/drush.phar
+curl -O https://github.com/drush-ops/drush-launcher/releases/download/0.4.2/drush.phar
 chmod +x drush.phar
 mv drush.phar /usr/bin/drush
 
