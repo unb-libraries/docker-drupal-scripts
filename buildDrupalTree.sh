@@ -24,7 +24,7 @@ composer install --no-ansi --prefer-dist --${DRUPAL_COMPOSER_DEV}
 COMPOSER_DRUSH_INSTALL_VERSION='8'
 echo "Installing drush $COMPOSER_DRUSH_INSTALL_VERSION"
 cd /app
-COMPOSER_HOME=/opt/drush COMPOSER_BIN_DIR=/usr/bin COMPOSER_VENDOR_DIR=/opt/drush/$COMPOSER_DRUSH_INSTALL_VERSION composer require drush/drush:$COMPOSER_DRUSH_INSTALL_VERSION--no-ansi --prefer-dist
+COMPOSER_HOME=/opt/drush COMPOSER_BIN_DIR=/usr/bin COMPOSER_VENDOR_DIR=/opt/drush/$COMPOSER_DRUSH_INSTALL_VERSION composer require drush/drush:$COMPOSER_DRUSH_INSTALL_VERSION --no-ansi --prefer-dist
 cd /opt/drush/$COMPOSER_DRUSH_INSTALL_VERSION/drush/drush
 composer update
 
