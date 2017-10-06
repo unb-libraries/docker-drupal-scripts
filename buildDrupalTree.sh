@@ -21,9 +21,12 @@ echo "Building - 'composer install --prefer-dist --${DRUPAL_COMPOSER_DEV}'"
 composer install --no-ansi --prefer-dist --${DRUPAL_COMPOSER_DEV}
 rm -rf /root/.composer/cache
 
-# Configure scaffolding files.
+# Install Drush globally.
 cd /app
-COMPOSER_HOME=/opt/drush COMPOSER_BIN_DIR=/usr/bin COMPOSER_VENDOR_DIR=/opt/drush/8 composer require drush/drush:8
+COMPOSER_INSTALL_VERSION='8'
+COMPOSER_HOME=/opt/drush COMPOSER_BIN_DIR=/usr/bin COMPOSER_VENDOR_DIR=/opt/drush/$COMPOSER_INSTALL_VERSION composer require drush/drush:$COMPOSER_INSTALL_VERSION
+cd /opt/drush/$COMPOSER_INSTALL_VERSION/drush/drush
+composer update
 
 # Move profile from repo to build root.
 cd ${DRUPAL_BUILD_TMPROOT}
