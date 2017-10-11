@@ -38,6 +38,9 @@ fi
 # Remove composer cache
 rm -rf /root/.composer/cache
 
+# Make drupal console available.
+ln -s ${DRUPAL_BUILD_TMPROOT}/vendor/bin/drupal /usr/bin/drupal
+
 # Move profile from repo to build root.
 cd ${DRUPAL_BUILD_TMPROOT}
 mv ${TMP_DRUPAL_BUILD_DIR}/${DRUPAL_SITE_ID} ${DRUPAL_BUILD_TMPROOT}/profiles/
