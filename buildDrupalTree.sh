@@ -36,7 +36,9 @@ if [ ! -d "/opt/drush/$DRUSH_INSTALL_VERSION" ]; then
 fi
 
 # Remove composer cache
-rm -rf /root/.composer/cache
+if [ "$COMPOSER_CLEAR_CACHE" != "FALSE" ]; then
+  rm -rf /root/.composer/cache
+fi
 
 # Make drupal console available.
 ln -s ${DRUPAL_BUILD_TMPROOT}/vendor/bin/drupal /usr/bin/drupal
