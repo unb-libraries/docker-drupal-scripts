@@ -9,4 +9,4 @@ mkdir -p ${TMP_DRUPAL_BUILD_DIR}
 rm -f /usr/bin/drupal
 
 # Remove upstream tests.
-rm -rf ${DRUPAL_BEHAT_TESTING_ROOT}
+rm -rf ${DRUPAL_TESTING_ROOT}
