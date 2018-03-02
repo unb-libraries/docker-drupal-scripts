@@ -10,7 +10,6 @@ docker-compose stop
 sleep 30
 docker-compose up -d
 travis/upstream/waitForDeploy.sh
-travis/upstream/testDrupal.sh
 travis/upstream/testPersistentContent.sh
 
 # Run tests
